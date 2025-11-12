@@ -228,7 +228,16 @@ genesis/
 
 ## License
 
-Please refer to the LICENSE file in the repository for licensing information.
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+
+The AGPL-3.0 license ensures that:
+- The source code remains open and accessible
+- Any modifications must be shared under the same license
+- Network use is considered distribution, requiring source code disclosure
+- Users interacting with the software over a network have the right to obtain the source code
+
+For complete license terms, please refer to the LICENSE file in the repository or visit:
+https://www.gnu.org/licenses/agpl-3.0.en.html
 
 ## Project Repository
 
