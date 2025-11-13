@@ -117,7 +117,7 @@ class StableDiffusionPipeline:
         })
 
         self._initialized = True
-        self.logger.info("✓ SD Pipeline initialized")
+        self.logger.info("[OK] SD Pipeline initialized")
 
     def load_from_pretrained(self, model_id: str = "runwayml/stable-diffusion-v1-5"):
         """
@@ -151,7 +151,7 @@ class StableDiffusionPipeline:
         self.unet.eval()
 
         self._initialized = True
-        self.logger.info("✓ Pre-trained model loaded")
+        self.logger.info("[OK] Pre-trained model loaded")
 
     @torch.no_grad()
     def generate(

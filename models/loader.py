@@ -132,7 +132,7 @@ class ModelLoader:
 
         self.loaded_models[checkpoint_name] = model_info
 
-        self.logger.info(f"✓ Checkpoint loaded: {checkpoint_name} ({len(state_dict)} keys)")
+        self.logger.info(f"[OK] Checkpoint loaded: {checkpoint_name} ({len(state_dict)} keys)")
         return model_info
 
     def _load_state_dict(self, path: Path) -> Dict[str, torch.Tensor]:
@@ -200,7 +200,7 @@ class ModelLoader:
             'keys_count': len(state_dict.keys()),
         }
 
-        self.logger.info(f"✓ VAE loaded: {vae_name} ({len(state_dict)} keys)")
+        self.logger.info(f"[OK] VAE loaded: {vae_name} ({len(state_dict)} keys)")
         return vae_info
     
     def load_lora(self, lora_name: str, strength: float = 1.0) -> Dict[str, Any]:
@@ -232,7 +232,7 @@ class ModelLoader:
             'keys_count': len(state_dict.keys()),
         }
 
-        self.logger.info(f"✓ LoRA loaded: {lora_name} (strength: {strength}, {len(state_dict)} keys)")
+        self.logger.info(f"[OK] LoRA loaded: {lora_name} (strength: {strength}, {len(state_dict)} keys)")
         return lora_info
     
     def unload_model(self, model_name: str):

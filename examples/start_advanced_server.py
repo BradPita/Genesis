@@ -42,11 +42,11 @@ def main():
     print()
     
     print("Features:")
-    print("  ✓ RESTful HTTP API")
-    print("  ✓ WebSocket real-time communication")
-    print("  ✓ Task queue with progress tracking")
-    print("  ✓ Session management")
-    print("  ✓ Multi-client support")
+    print("  [OK] RESTful HTTP API")
+    print("  [OK] WebSocket real-time communication")
+    print("  [OK] Task queue with progress tracking")
+    print("  [OK] Session management")
+    print("  [OK] Multi-client support")
     print()
     
     print("Supported Clients:")

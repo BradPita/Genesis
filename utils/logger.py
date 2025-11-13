@@ -5,7 +5,13 @@ Logging utility
 
 import logging
 import sys
+import io
 from typing import Optional
+
+# Fix encoding for Windows
+if sys.platform == 'win32' and sys.stdout.encoding != 'utf-8':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 
 def setup_logger(
@@ -31,8 +37,14 @@ def setup_logger(
     if logger.handlers:
         return logger
     
-    # Console handler
-    console_handler = logging.StreamHandler(sys.stdout)
+    # Console handler with UTF-8 encoding
+    # Create a UTF-8 encoded stream for Windows
+    if sys.platform == 'win32':
+        # Use a custom stream that handles encoding properly
+        stream = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
+        console_handler = logging.StreamHandler(stream)
+    else:
+        console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(getattr(logging, level.upper()))
     
     # Formatter

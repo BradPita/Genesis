@@ -18,10 +18,10 @@ except ImportError:
     FLASK_AVAILABLE = False
     print("Warning: Flask not installed. Install with: pip install flask flask-cors flask-socketio")
 
-from ..core.config import GenesisConfig
-from ..core.engine import GenesisEngine
-from ..core.node_registry import get_node_registry
-from ..core.node_scanner import get_node_scanner
+from genesis.core.config import GenesisConfig
+from genesis.core.engine import GenesisEngine
+from genesis.core.node_registry import get_node_registry
+from genesis.core.node_scanner import get_node_scanner
 
 logger = logging.getLogger(__name__)
 

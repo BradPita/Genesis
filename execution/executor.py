@@ -65,7 +65,7 @@ class Executor:
             self.logger.info("Loading pretrained model from HuggingFace...")
             self.sd_pipeline.load_from_pretrained()
 
-        self.logger.info("✓ Pipeline initialized")
+        self.logger.info("[OK] Pipeline initialized")
 
     def execute_generation(self, params: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -124,7 +124,7 @@ class Executor:
             output_path = output_dir / filename
 
             image.save(str(output_path))
-            self.logger.info(f"✓ Image saved: {output_path}")
+            self.logger.info(f"[OK] Image saved: {output_path}")
 
             result = {
                 'success': True,
@@ -141,7 +141,7 @@ class Executor:
                 'status': 'completed'
             }
 
-            self.logger.info(f"✓ Generation completed in {result['execution_time']:.2f}s")
+            self.logger.info(f"[OK] Generation completed in {result['execution_time']:.2f}s")
             return result
 
         except Exception as e:
@@ -188,7 +188,7 @@ class Executor:
                 'status': 'completed'
             }
             
-            self.logger.info(f"✓ Pipeline executed in {result['execution_time']:.2f}s")
+            self.logger.info(f"[OK] Pipeline executed in {result['execution_time']:.2f}s")
             return result
             
         except Exception as e:

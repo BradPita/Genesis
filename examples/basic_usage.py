@@ -38,7 +38,7 @@ def example_1_basic_engine():
     
     # Cleanup
     engine.cleanup()
-    print("\n✓ Example 1 completed")
+    print("\n[OK] Example 1 completed")
 
 
 def example_2_context_manager():
@@ -54,7 +54,7 @@ def example_2_context_manager():
         print("\nEngine initialized automatically")
         print(f"Device: {engine.get_device_info()['device']}")
         
-    print("\n✓ Example 2 completed (automatic cleanup)")
+    print("\n[OK] Example 2 completed (automatic cleanup)")
 
 
 def example_3_list_models():
@@ -82,7 +82,7 @@ def example_3_list_models():
             print(f"\n⚠ Could not list models: {e}")
             print("  Make sure to place models in the correct directories")
     
-    print("\n✓ Example 3 completed")
+    print("\n[OK] Example 3 completed")
 
 
 def example_4_simple_pipeline():
@@ -124,9 +124,9 @@ def example_4_simple_pipeline():
         for error in errors:
             print(f"  - {error}")
     else:
-        print(f"\n✓ Pipeline validation passed")
+        print(f"\n[OK] Pipeline validation passed")
     
-    print("\n✓ Example 4 completed")
+    print("\n[OK] Example 4 completed")
 
 
 def example_5_pipeline_builder():
@@ -157,7 +157,7 @@ def example_5_pipeline_builder():
     for node_id, node in pipeline.nodes.items():
         print(f"  {node_id}: {node.type}")
     
-    print("\n✓ Example 5 completed")
+    print("\n[OK] Example 5 completed")
 
 
 def example_6_generate_image():
@@ -192,7 +192,7 @@ def example_6_generate_image():
         if not result['success']:
             print(f"  Error: {result.get('error', 'Unknown error')}")
     
-    print("\n✓ Example 6 completed")
+    print("\n[OK] Example 6 completed")
 
 
 def example_7_custom_config():
@@ -220,9 +220,9 @@ def example_7_custom_config():
     
     # Create directories
     config.create_directories()
-    print("\n✓ Directories created")
+    print("\n[OK] Directories created")
     
-    print("\n✓ Example 7 completed")
+    print("\n[OK] Example 7 completed")
 
 
 def main():
@@ -255,7 +255,7 @@ def main():
             example_func()
             
         print("\n" + "="*60)
-        print("✓ All examples completed successfully!")
+        print("[OK] All examples completed successfully!")
         print("="*60)
         
     except KeyboardInterrupt:
